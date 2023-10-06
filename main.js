@@ -6,16 +6,20 @@ function getComputerChoice(){
         randomOutput === 2 ? "Paper" : "Scissors;"
 //returns a number between zero and two (inclusive)
 }
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection){
-  return (playerChoice == "Rock" && computerSelection == "Paper") ? "You Lose! Paper beats Rock" :
-          (playerChoice == "Paper" && computerSelection == "Scissors") ? "You Lose! Scissors beats Paper" :
-          (playerChoice == computerSelection) ? "Tie!" :
-          "You Win! "+computerSelection+" beats "+playerSelection;
+  return (playerSelection == "Rock" && computerSelection == "Paper") || 
+        (playerSelection == "Paper" && computerSelection == "Scissors") ||
+        (playerSelection == "Scissors" && computerSelection == "Rock") ? 
+          `You Lose! ${computerSelection} beats ${playerSelection}`:
+        (playerSelection === computerSelection) ? "Tie" : 
+          `You Win! ${playerSelection} beats ${computerSelection}`;
+          
 }
-const playerSelection = prompt("Enter playerOutput");
-const playerChoice = playerSelection[0].toUpperCase().concat(playerSelection.slice(1).toLowerCase());
+const playerChoice = prompt("Enter playerOutput");
+const playerSelection = playerChoice[0].toUpperCase().concat(playerChoice.slice(1).toLowerCase());
 const computerSelection = getComputerChoice();
-console.log(playRound());
-// console.log(playerChoice);
+console.log(`${playerSelection} and ${computerSelection}`);
+alert(`Player chose ${playerSelection}, Computer chose ${computerSelection}.\n${playRound(playerSelection, computerSelection)}`);
+console.log(playRound(playerSelection, computerSelection));
