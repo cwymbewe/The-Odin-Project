@@ -43,11 +43,11 @@ function game(rounds){
   console.log(`Wins: ${winCount}\nDraws:${drawCount}\nLosses: ${loseCount}`);
   
   if(`${winCount}` > `${loseCount}`) {
-    alert('Congrats, you won the Game!');
+    alert('Congrats Charles, you won the Game!');
   } else if(`${winCount}` < `${loseCount}`) {
-    alert('Sorry You lost the Game');
+    alert('Sorry Charles You lost the Game');
   } else {
-    alert('It was a tie!');
+    alert('It was a tie! play another round');
   }
   // alert(`Wins: ${winCount}\nDraws:${drawCount}\nLosses: ${loseCount}`);
 }
